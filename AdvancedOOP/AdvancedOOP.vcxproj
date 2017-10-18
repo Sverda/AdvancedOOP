@@ -112,6 +112,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Tags.cpp" />
+    <ClCompile Include="TexValidator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NoCloseTagException.h" />
+    <ClInclude Include="NoItemTagException.h" />
+    <ClInclude Include="NoMatchedTagException.h" />
+    <ClInclude Include="NoOpenTagException.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="Tags.h" />
+    <ClInclude Include="TexValidator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
