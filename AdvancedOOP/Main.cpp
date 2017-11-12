@@ -4,21 +4,31 @@
 #include "Content.h"
 using namespace std;
 
+int RandomInt();
+double RandomDouble();
+
 void main()
 {
-	Content<double> container;
-
 	srand(time(nullptr));
-	int stackCount = rand() % 100;
-	//cout << "Number of elements on stock: " << stackCount << endl;
-	for (int i = 0; i < stackCount; i++)
+	Content<double> container;
+	int n = RandomInt();
+
+	for (int i = 0; i < n; i++)
 	{
-		double randomNumber = (double)rand() / (double)RAND_MAX * 10.0;
-		container.push(randomNumber);
+		double randomDouble = RandomDouble();
+		container.push(randomDouble);
 	}
-	/*for (int i = 0; i < stackCount; ++i)
-	{
-		cout << "Element " << i << ": " << container.pop() << endl;
-	}*/
+
 	getchar();
 }
+
+int RandomInt()
+{
+	return rand() % 100;
+}
+
+double RandomDouble()
+{
+	return (double)rand() / (double)RAND_MAX * 10.0;
+}
+
