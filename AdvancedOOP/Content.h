@@ -22,10 +22,12 @@ public:
 		iterator(Content& is) : s(is), index(0) {}
 		iterator(Content& is, bool) : s(is), index(s.top) {}
 
-		T operator++();
-		T operator++(int);
+		T operator++();	// Prefix
+		T operator++(int);	// Postfix
 		T& operator*() const { return s.stack[index]; }
 		iterator& operator=(const iterator& rv);
+		bool operator==(const iterator& rv) const;
+		bool operator!=(const iterator& rv) const;
 	};
 	iterator begin() { return iterator(*this); }
 	iterator end() { return iterator(*this, true); }
@@ -66,3 +68,12 @@ template <typename T> typename Content<T>::iterator& Content<T>::iterator::opera
 	return *this;
 }
 
+template <typename T> bool Content<T>::iterator::operator==(const iterator& rv) const
+{
+	return index == rv.index;
+}
+
+template <typename T> bool Content<T>::iterator::operator!=(const iterator& rv) const
+{
+	return index != rv.index;
+}
