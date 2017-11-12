@@ -28,6 +28,9 @@ public:
 		iterator& operator=(const iterator& rv);
 		bool operator==(const iterator& rv) const;
 		bool operator!=(const iterator& rv) const;
+		void Sort();
+		void ResetToEnd() { index = s.top; }
+		void ResetToBegin() { index = 0; }
 	};
 	iterator begin() { return iterator(*this); }
 	iterator end() { return iterator(*this, true); }
@@ -76,4 +79,18 @@ template <typename T> bool Content<T>::iterator::operator==(const iterator& rv) 
 template <typename T> bool Content<T>::iterator::operator!=(const iterator& rv) const
 {
 	return index != rv.index;
+}
+
+template <typename T> void Content<T>::iterator::Sort()
+{
+	for (int i = 0; i < s.top - 1; ++i)
+	{
+		for (int j = i + 1; j < s.top; ++j)
+		{
+			if (s.stack[i] < s.stack[j])
+			{
+				swap(s.stack[i], s.stack[j]);
+			}
+		}
+	}
 }
