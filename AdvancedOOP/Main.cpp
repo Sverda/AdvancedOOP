@@ -10,6 +10,7 @@ template<typename T> T FindMin(typename Content<T>::iterator begin, typename Con
 template<typename T> T FindMedian(typename Content<T>::iterator begin, typename Content<T>::iterator end);
 template<typename T> int CountElements(typename Content<T>::iterator begin, typename Content<T>::iterator end);
 template<typename T> void PrintRange(typename Content<T>::iterator begin, typename Content<T>::iterator end);
+template<typename T> T FindAverage(typename Content<T>::iterator begin, typename Content<T>::iterator end);
 
 void main()
 {
@@ -28,6 +29,8 @@ void main()
 	cout << "Min: " << FindMin<double>(container.begin(), container.end()) << endl;
 	cout << endl;
 	cout << "Median: " << FindMedian<double>(container.begin(), container.end()) << endl;
+	cout << endl;
+	cout << "Average: " << FindAverage<double>(container.begin(), container.end());
 
 	getchar();
 }
@@ -93,6 +96,7 @@ template<typename T> T FindMedian(typename Content<T>::iterator begin, typename 
 
 template<typename T> int CountElements(typename Content<T>::iterator begin, typename Content<T>::iterator end)
 {
+	begin.ResetToBegin();
 	int numberOfElements = 0;
 	while (begin != end)
 	{
@@ -111,4 +115,15 @@ template<typename T> void PrintRange(typename Content<T>::iterator begin, typena
 		cout << begin++ << endl;
 	}
 	begin.ResetToBegin();
+}
+
+template<typename T> T FindAverage(typename Content<T>::iterator begin, typename Content<T>::iterator end)
+{
+	T sum = begin++;
+	while (begin != end)
+	{
+		sum += begin++;
+	}
+	T count = CountElements<T>(begin, end);
+	return sum / count;
 }
