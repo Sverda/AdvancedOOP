@@ -8,7 +8,8 @@
 using namespace std;
 
 
-int main() {
+int main()
+{
 	SzablonStosu<string, 5> K1;
 	SzablonStosu<temperatura_wody, 10> K2;
 	SzablonStosu<kostka_do_gry, 10> K3;
@@ -16,10 +17,12 @@ int main() {
 	// zape�nianie stosu
 	ifstream fi("qv-lab4.txt");
 	string s;
-	try {
+	try
+	{
 		K1.push("Henryk");
 		K1.push("Sienkiewicz");
-		while (fi) {
+		while (fi)
+		{
 			fi >> s;
 			K1.push(s);
 			fi.seekg(ios::beg);
@@ -27,7 +30,8 @@ int main() {
 			cout << '*';
 		};
 	}
-	catch (Przepelnienie& e) {
+	catch (Przepelnienie& e)
+	{
 		cout << "K1 gotowy: " << e.what() << endl;
 	};
 	cout << "Danych na stosie K1: " << K1.zajetosc() << endl;
@@ -46,25 +50,31 @@ int main() {
 	cout << "Danych na stosie K3: " << K3.zajetosc() << endl;
 
 	// opr�nianie stosu
-	try {
+	try
+	{
 		while (true)
 			K1.pop();
 	}
-	catch (BrakDanych& e) {
+	catch (BrakDanych& e)
+	{
 		cout << "K1 pusty: " << e.what() << endl;
 	}
-	try {
+	try
+	{
 		while (true)
 			K2.pop();
 	}
-	catch (BrakDanych& e) {
+	catch (BrakDanych& e)
+	{
 		cout << "K2 pusty: " << e.what() << endl;
 	}
-	try {
+	try
+	{
 		while (true)
 			K3.pop();
 	}
-	catch (BrakDanych& e) {
+	catch (BrakDanych& e)
+	{
 		cout << "K3 pusty: " << e.what() << endl;
 	}
 

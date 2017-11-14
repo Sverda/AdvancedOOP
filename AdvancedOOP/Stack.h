@@ -1,13 +1,17 @@
 ﻿#pragma once
 #include "Exceptions.h"
 
-template<typename T, int rozmiar, class _Cechy = Cechy<T>>
-class SzablonStosu {
+template <typename T, int rozmiar, class _Cechy = Cechy<T>>
+class SzablonStosu
+{
 	T stos[rozmiar];
 	int top;
 public:
 	int zajetosc() { return top; };
-	SzablonStosu() : top(0) {}
+
+	SzablonStosu() : top(0)
+	{
+	}
 
 	void push(const T& i);
 	void push(int i);
