@@ -1,6 +1,7 @@
 #pragma once
 
-class Bazowe_Cechy {
+class Bazowe_Cechy
+{
 public:
 	static const bool _jest_liczba = false;
 	static const bool _nalezy_do_przedzialu = false;

@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseTraits.h" />
+    <ClInclude Include="CollarSizeNo.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Exceptions.h" />
     <ClInclude Include="Stack.h" />

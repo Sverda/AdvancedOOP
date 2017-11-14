@@ -43,5 +43,8 @@
     <ClInclude Include="Traits.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CollarSizeNo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
