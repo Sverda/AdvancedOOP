@@ -1,16 +1,16 @@
 #pragma once
 #include "Traits.h"
 
-class kostka_do_gry
+class Dice
 {
 	int n;
 public:
-	kostka_do_gry(int num = 1) : n(num)
+	Dice(int num = 1) : n(num)
 	{
 	};
 	int operator()() const { return n; };
 
-	kostka_do_gry& operator=(int num)
+	Dice& operator=(int num)
 	{
 		n = num;
 		return *this;
@@ -18,7 +18,7 @@ public:
 };
 
 template <>
-class Cechy<kostka_do_gry> : public Bazowe_Cechy
+class Cechy<Dice> : public BaseTraits
 {
 public:
 	static const bool _jest_liczba = true;

@@ -1,16 +1,16 @@
 #pragma once
 #include "Traits.h"
 
-class temperatura_wody
+class WaterTemp
 {
 	double t;
 public:
-	temperatura_wody(double temp = 50) : t(temp)
+	WaterTemp(double temp = 50) : t(temp)
 	{
 	};
 	double operator()() { return t; };
 
-	temperatura_wody& operator=(double temp)
+	WaterTemp& operator=(double temp)
 	{
 		t = temp;
 		return *this;
@@ -18,7 +18,7 @@ public:
 };
 
 template <>
-class Cechy<temperatura_wody> : public Bazowe_Cechy
+class Cechy<WaterTemp> : public BaseTraits
 {
 public:
 	static const bool _jest_liczba = true;

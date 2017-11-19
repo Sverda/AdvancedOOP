@@ -2,14 +2,14 @@
 #include "Exceptions.h"
 
 template <typename T, int rozmiar, class _Cechy = Cechy<T>>
-class SzablonStosu
+class StockTemplate
 {
 	T stos[rozmiar];
 	int top;
 public:
 	int zajetosc() { return top; };
 
-	SzablonStosu() : top(0)
+	StockTemplate() : top(0)
 	{
 	}
 
@@ -20,18 +20,18 @@ public:
 };
 
 template <typename T, int rozmiar, class _Cechy>
-void SzablonStosu<T, rozmiar, _Cechy>::push(const T& i)
+void StockTemplate<T, rozmiar, _Cechy>::push(const T& i)
 {
 	if (top == rozmiar)
-		throw Przepelnienie(typeid(i).name());
+		throw Overflow(typeid(i).name());
 	stos[top++] = i;
 }
 
 template <typename T, int rozmiar, class _Cechy>
-void SzablonStosu<T, rozmiar, _Cechy>::push(int i)
+void StockTemplate<T, rozmiar, _Cechy>::push(int i)
 {
 	if (top == rozmiar)
-		throw Przepelnienie(typeid(i).name());
+		throw Overflow(typeid(i).name());
 
 	// walidacja warto�ci przekazanej do zapisu
 	if (Cechy<T>::_jest_liczba && Cechy<T>::_jest_liczba_calkowita)
@@ -47,10 +47,10 @@ void SzablonStosu<T, rozmiar, _Cechy>::push(int i)
 }
 
 template <typename T, int rozmiar, class _Cechy>
-void SzablonStosu<T, rozmiar, _Cechy>::push(double i)
+void StockTemplate<T, rozmiar, _Cechy>::push(double i)
 {
 	if (top == rozmiar)
-		throw Przepelnienie(typeid(i).name());
+		throw Overflow(typeid(i).name());
 
 	// walidacja warto�ci przekazanej do zapisu
 	if (Cechy<T>::_jest_liczba && !Cechy<T>::_jest_liczba_calkowita)
@@ -66,10 +66,10 @@ void SzablonStosu<T, rozmiar, _Cechy>::push(double i)
 }
 
 template <typename T, int rozmiar, class _Cechy>
-T SzablonStosu<T, rozmiar, _Cechy>::pop()
+T StockTemplate<T, rozmiar, _Cechy>::pop()
 {
 	if (top == 0)
-		throw BrakDanych(typeid(stos[0]).name());
+		throw NoData(typeid(stos[0]).name());
 
 	return stos[--top];
 }

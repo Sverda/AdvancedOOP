@@ -1,6 +1,6 @@
 #pragma once
 
-class Bazowe_Cechy
+class BaseTraits
 {
 public:
 	static const bool _jest_liczba = false;
