@@ -113,6 +113,18 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseTraits.h" />
+    <ClInclude Include="CollarSizeNo.h" />
+    <ClInclude Include="Dice.h" />
+    <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="Traits.h" />
+    <ClInclude Include="WaterTemp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="qv-lab4.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
