@@ -5,20 +5,20 @@ class WaterTemp
 {
 	double t;
 public:
-	WaterTemp(double temp = 50) : t(temp)
-	{
-	};
-	double operator()() { return t; };
+	WaterTemp(double temp = 50) : t(temp) { }
+	double operator()() const { return t; }
 
-	WaterTemp& operator=(double temp)
-	{
-		t = temp;
-		return *this;
-	};
+	WaterTemp& operator=(double temp);
 };
 
+WaterTemp& WaterTemp::operator=(double temp)
+{
+	t = temp;
+	return *this;
+}
+
 template <>
-class Cechy<WaterTemp> : public BaseTraits
+class Traits<WaterTemp> : public BaseTraits
 {
 public:
 	static const bool _jest_liczba = true;

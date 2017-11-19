@@ -5,20 +5,20 @@ class Dice
 {
 	int n;
 public:
-	Dice(int num = 1) : n(num)
-	{
-	};
-	int operator()() const { return n; };
+	Dice(int num = 1) : n(num) {}
+	int operator()() const { return n; }
 
-	Dice& operator=(int num)
-	{
-		n = num;
-		return *this;
-	};
+	Dice& operator=(int num);
 };
 
+Dice& Dice::operator=(int num)
+{
+	n = num;
+	return *this;
+}
+
 template <>
-class Cechy<Dice> : public BaseTraits
+class Traits<Dice> : public BaseTraits
 {
 public:
 	static const bool _jest_liczba = true;

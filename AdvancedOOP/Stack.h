@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Exceptions.h"
 
-template <typename T, int rozmiar, class _Cechy = Cechy<T>>
+template <typename T, int rozmiar, class _Cechy = Traits<T>>
 class StockTemplate
 {
 	T stos[rozmiar];
@@ -34,11 +34,11 @@ void StockTemplate<T, rozmiar, _Cechy>::push(int i)
 		throw Overflow(typeid(i).name());
 
 	// walidacja warto�ci przekazanej do zapisu
-	if (Cechy<T>::_jest_liczba && Cechy<T>::_jest_liczba_calkowita)
+	if (Traits<T>::_jest_liczba && Traits<T>::_jest_liczba_calkowita)
 	{
-		if (Cechy<T>::_nalezy_do_przedzialu)
+		if (Traits<T>::_nalezy_do_przedzialu)
 		{
-			if ((Cechy<T>::_dolna_granica_przedzialu <= i) && (i <= Cechy<T>::_gorna_granica_przedzialu))
+			if ((Traits<T>::_dolna_granica_przedzialu <= i) && (i <= Traits<T>::_gorna_granica_przedzialu))
 				stos[top++] = i;
 		}
 		else
@@ -53,11 +53,11 @@ void StockTemplate<T, rozmiar, _Cechy>::push(double i)
 		throw Overflow(typeid(i).name());
 
 	// walidacja warto�ci przekazanej do zapisu
-	if (Cechy<T>::_jest_liczba && !Cechy<T>::_jest_liczba_calkowita)
+	if (Traits<T>::_jest_liczba && !Traits<T>::_jest_liczba_calkowita)
 	{
-		if (Cechy<T>::_nalezy_do_przedzialu)
+		if (Traits<T>::_nalezy_do_przedzialu)
 		{
-			if ((Cechy<T>::dolna_granica_przedzialu() <= i) && (i <= Cechy<T>::gorna_granica_przedzialu()))
+			if ((Traits<T>::dolna_granica_przedzialu() <= i) && (i <= Traits<T>::gorna_granica_przedzialu()))
 				stos[top++] = i;
 		}
 		else

@@ -2,7 +2,7 @@
 #include "BaseTraits.h"
 
 template <typename T>
-class Cechy : public BaseTraits
+class Traits : public BaseTraits
 {
 public:
 	static const double dolna_granica_przedzialu() { return 0; };

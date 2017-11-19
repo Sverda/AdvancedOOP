@@ -18,7 +18,7 @@ inline CollarSizeNo& CollarSizeNo::operator=(int _sizeNumber)
 }
 
 template<>
-class Cechy<CollarSizeNo> : public BaseTraits
+class Traits<CollarSizeNo> : public BaseTraits
 {
 public:
 	static const bool _jest_liczba = true;
