@@ -8,5 +8,6 @@ public:
 	static const bool _jest_liczba_calkowita = false;
 	static const int _dolna_granica_przedzialu = 0;
 	static const int _gorna_granica_przedzialu = 0;
+	static const int _numbers_after_point = 0;
 	static const bool _is_power_of_2 = false;
 };

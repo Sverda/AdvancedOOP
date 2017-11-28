@@ -112,9 +112,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MicroSD.cpp" />
-    <ClCompile Include="RadioFrequency.cpp" />
-    <ClCompile Include="TireInnerDiameter.cpp" />
+    <ClCompile Include="MicroSD.h" />
+    <ClCompile Include="RadioFrequency.h" />
+    <ClCompile Include="TireInnerDiameter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseTraits.h" />

@@ -1,20 +1,23 @@
 #pragma once
 #include "Traits.h"
+#include <ostream>
+#include <iomanip>
 
 class TireInnerDiameter
 {
 	int innerDiameter;
 public:
-	TireInnerDiameter(int inner_diameter):innerDiameter(inner_diameter) { }
+	TireInnerDiameter(int inner_diameter = 10):innerDiameter(inner_diameter) { }
 	int operator()() const { return innerDiameter; }
-	TireInnerDiameter& operator=(int inner_diameter);
-};
 
-TireInnerDiameter& TireInnerDiameter::operator=(int inner_diameter)
-{
-	innerDiameter = inner_diameter;
-	return *this;
-}
+	TireInnerDiameter& TireInnerDiameter::operator=(int inner_diameter)
+	{
+		innerDiameter = inner_diameter;
+		return *this;
+	}
+
+	friend std::ostream& operator<<(std::ostream& os, TireInnerDiameter& tire);
+};
 
 template<>
 class Traits<TireInnerDiameter> : public BaseTraits

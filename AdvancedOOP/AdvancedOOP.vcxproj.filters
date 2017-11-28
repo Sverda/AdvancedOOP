@@ -18,13 +18,13 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TireInnerDiameter.cpp">
+    <ClCompile Include="MicroSD.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="RadioFrequency.cpp">
+    <ClCompile Include="RadioFrequency.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="MicroSD.cpp">
+    <ClCompile Include="TireInnerDiameter.h">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
