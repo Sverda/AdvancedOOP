@@ -39,7 +39,9 @@ void StockTemplate<T, rozmiar, _Cechy>::push(int i)
 		if (Traits<T>::_nalezy_do_przedzialu)
 		{
 			if ((Traits<T>::_dolna_granica_przedzialu <= i) && (i <= Traits<T>::_gorna_granica_przedzialu))
+			{
 				stos[top++] = i;
+			}
 		}
 		else
 			stos[top++] = i;

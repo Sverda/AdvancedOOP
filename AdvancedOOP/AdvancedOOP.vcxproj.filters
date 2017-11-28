@@ -21,6 +21,12 @@
     <ClCompile Include="TireInnerDiameter.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="RadioFrequency.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MicroSD.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WaterTemp.h">

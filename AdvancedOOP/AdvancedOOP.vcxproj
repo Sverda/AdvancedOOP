@@ -112,6 +112,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MicroSD.cpp" />
+    <ClCompile Include="RadioFrequency.cpp" />
     <ClCompile Include="TireInnerDiameter.cpp" />
   </ItemGroup>
   <ItemGroup>
