@@ -19,6 +19,13 @@ Mixer::Mixer(const char* filename)
 
 Mixer::~Mixer()
 {
+	for(iterator i = this->begin(); i != this->end(); ++i)
+	{
+		while (!i->empty())
+		{
+			i->pop();
+		}
+	}
 }
 
 void Mixer::Open(const char* filename)
@@ -44,9 +51,18 @@ void Mixer::Open(const char* filename)
 
 		} while (stringstream);
 
+		//<test>
+		/*do
+		{
+			cout << qline.top() << " ";
+			qline.pop();
+		}
+		while (!qline.empty());*/
+		//</test>
+
 		this->push_back(qline);
 
-		while (qline.empty())
+		while (!qline.empty())
 			qline.pop();
 	}
 

@@ -16,6 +16,6 @@ template <> struct Grater<std::string>
 {
 	bool operator()(const std::string& x, const std::string& y) const
 	{
-		return x.length() > y.length();
+		return x.size() < y.size();
 	}
 };
