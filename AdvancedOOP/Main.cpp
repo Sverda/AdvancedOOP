@@ -2,7 +2,7 @@
 #include "Mixer.h"
 using namespace std;
 
-void Main()
+void main()
 {
 	Mixer mixer;
 	mixer.Open("mustafa.txt");

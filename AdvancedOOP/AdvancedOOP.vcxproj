@@ -115,6 +115,7 @@
     <ClCompile Include="Mixer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Grater.h" />
     <ClInclude Include="Mixer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
