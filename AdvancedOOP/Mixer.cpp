@@ -3,7 +3,8 @@
 #include<sstream>
 #include<string>
 #include<queue>
-#include "Grater.h"
+#include "Grater_Queue.h"
+#include "Less_List.h"
 using namespace std;
 
 
@@ -34,7 +35,7 @@ void Mixer::Open(const char* filename)
 	filestream.open(filename);
 
 	string sline;
-	priority_queue<string, vector<string>, Grater<string>> qline;
+	String_Queue qline;
 	while (!filestream.eof())
 	{
 		getline(filestream, sline);
@@ -71,8 +72,10 @@ void Mixer::Open(const char* filename)
 
 void Mixer::Write(ostream& out)
 {
+
 }
 
 void Mixer::Execute()
 {
+	this->sort(Less_List<String_Queue>());
 }

@@ -3,10 +3,10 @@
 #include<list>
 #include<queue>
 #include<string>
-#include "Grater.h"
+#include "Grater_Queue.h"
 using namespace std;
 
-class Mixer : public list<priority_queue<string, vector<string>, Grater<string>>>
+class Mixer : public list<String_Queue>
 {
 public:
 	Mixer();

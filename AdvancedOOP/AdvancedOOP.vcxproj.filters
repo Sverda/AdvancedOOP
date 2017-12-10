@@ -26,7 +26,10 @@
     <ClInclude Include="Mixer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Grater.h">
+    <ClInclude Include="Grater_Queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Less_List.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
