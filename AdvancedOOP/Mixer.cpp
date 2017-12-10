@@ -70,9 +70,24 @@ void Mixer::Open(const char* filename)
 	filestream.close();
 }
 
+ostream& operator<<(ostream& os, String_Queue& queue)
+{
+	os << queue.size() << ": ";
+	while (!queue.empty())
+	{
+		os << queue.top() << " ";
+		queue.pop();
+	}
+	os << endl;
+	return os;
+}
+
 void Mixer::Write(ostream& out)
 {
-
+	for (iterator i = this->begin(); i != this->end(); ++i)
+	{
+		out << *i << endl;
+	}
 }
 
 void Mixer::Execute()
