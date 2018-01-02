@@ -112,6 +112,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Mixer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Grater_Queue.h" />
+    <ClInclude Include="Less_list.h" />
+    <ClInclude Include="Mixer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="mistrz.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
